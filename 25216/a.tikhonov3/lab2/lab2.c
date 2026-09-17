@@ -3,7 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-extern char *tzname;
+extern char *tzname[];
 
 int main()
 {
