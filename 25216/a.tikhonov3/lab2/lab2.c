@@ -13,8 +13,9 @@ int main()
     time(&now);
     printf("%s", ctime(&now));
 
-    setenv("TZ", "PST8", 1);
-    tzset();
+    if (setenv("TZ", "PST8", 1) == -1) { 
+        perror("setenv"); exit(1); 
+    }
 
     sp = localtime(&now);
     printf("%d/%d/%02d %d:%02d %s\n",
