@@ -13,9 +13,10 @@ int main()
     time(&now);
     printf("%s", ctime(&now));
 
-    if (setenv("TZ", "PST8", 1) == -1) { 
+    if (setenv("TZ", "America/Los_Angeles", 1) == -1) { 
         perror("setenv"); exit(1); 
     }
+    tzset();
 
     sp = localtime(&now);
     printf("%d/%d/%02d %d:%02d %s\n",
